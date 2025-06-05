@@ -1,0 +1,2 @@
+# synology-shar-proxy
+Synology
