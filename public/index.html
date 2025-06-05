@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>共享内容展示</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #f0f0f0;
+        text-align: center;
+        padding: 50px;
+      }
+      input {
+        padding: 10px;
+        width: 60%;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>请输入共享链接地址：</h1>
+    <input id="input" placeholder="例如：https://nas.xxx.top:4430/sharing/uhSqCdaZk" />
+    <br />
+    <button onclick="go()">查看内容</button>
+
+    <script>
+      function go() {
+        const val = document.getElementById("input").value.trim();
+        if (!val.startsWith("http")) {
+          alert("请输入以 http/https 开头的完整共享地址");
+          return;
+        }
+        location.href = "/" + encodeURIComponent(val);
+      }
+    </script>
+  </body>
+</html>
